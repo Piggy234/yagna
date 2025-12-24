@@ -1,0 +1,116 @@
+{
+    "info": {
+        "name": "Staking API - Local",
+        "_postman_id": "d8f3b6b3-0000-4000-8000-000000000001",
+        "description": "Postman collection for staking module (core/staking). Base URL variable: {{baseUrl}}",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "variable": [
+        {
+            "key": "baseUrl",
+            "value": "http://localhost:7465",
+            "type": "string"
+        }
+    ],
+    "item": [
+        {
+            "name": "Register Provider",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"provider_id\": \"node1\",\n  \"stake\": 10.0\n}"
+                },
+                "url": "{{baseUrl}}/staking/register"
+            }
+        },
+        {
+            "name": "Stake",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"provider_id\": \"node1\",\n  \"amount\": 5.0\n}"
+                },
+                "url": "{{baseUrl}}/staking/stake"
+            }
+        },
+        {
+            "name": "Reward",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"provider_id\": \"node1\",\n  \"amount\": 2.0\n}"
+                },
+                "url": "{{baseUrl}}/staking/reward"
+            }
+        },
+        {
+            "name": "Slash",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"provider_id\": \"node1\",\n  \"amount\": 3.0,\n  \"reason\": \"cheating\"\n}"
+                },
+                "url": "{{baseUrl}}/staking/slash"
+            }
+        },
+        {
+            "name": "Withdraw",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"provider_id\": \"node1\",\n  \"amount\": 1.0\n}"
+                },
+                "url": "{{baseUrl}}/staking/withdraw"
+            }
+        },
+        {
+            "name": "Get Provider",
+            "request": {
+                "method": "GET",
+                "url": "{{baseUrl}}/staking/node1"
+            }
+        },
+        {
+            "name": "Get Events",
+            "request": {
+                "method": "GET",
+                "url": "{{baseUrl}}/staking/events/node1"
+            }
+        }
+    ]
+}

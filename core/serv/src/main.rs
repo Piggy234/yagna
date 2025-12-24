@@ -48,6 +48,7 @@ use ya_service_bus::typed as gsb;
 mod autocomplete;
 mod extension;
 mod model;
+// staking adapter removed — use core/staking crate directly where needed
 
 use crate::extension::Extension;
 use autocomplete::CompleteCommand;
@@ -560,6 +561,10 @@ impl ServiceCommand {
 
                 //before running yagna check consents
                 consent_check_before_startup(false)?;
+
+                std::fs::create_dir_all(&ctx.data_dir)?;
+                let data_dir_path = ctx.data_dir.clone();
+                // staking adapter removed; use `ya_staking` crate directly where needed
 
                 ya_sb_router::bind_gsb_router(ctx.gsb_url.clone())
                     .await

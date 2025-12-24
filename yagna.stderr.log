@@ -1,0 +1,156 @@
+[2025-12-23T10:10:14.444+0800 INFO  ya_file_logging] Logging configuration: FileLogConfig {
+    dir: "E:\\Junioryear_firstsemester\\Introduction_to_Blockchain\\backend\\yagna_data",
+    keep_compressed: 10,
+    keep_uncompressed: 1,
+    rotate_age: Day,
+    rotate_size: None,
+}
+[2025-12-23T10:10:14.461+0800 INFO  yagna] Starting yagna service! Version: 0.17.6 (31f5353e 2025-12-22).
+[2025-12-23T10:10:14.461+0800 INFO  yagna] Data directory: E:\Junioryear_firstsemester\Introduction_to_Blockchain\backend\yagna_data
+[2025-12-23T10:10:14.465+0800 INFO  ya_sb_router::router] Router listening on: 127.0.0.1:7464
+[2025-12-23T10:10:14.471+0800 INFO  actix_server::builder] starting 16 workers
+[2025-12-23T10:10:14.473+0800 INFO  ya_persistence::executor] using database at: E:\Junioryear_firstsemester\Introduction_to_Blockchain\backend\yagna_data\yagna.db
+[2025-12-23T10:10:14.496+0800 INFO  ya_persistence::executor] using database at: E:\Junioryear_firstsemester\Introduction_to_Blockchain\backend\yagna_data\activity.db
+[2025-12-23T10:10:14.508+0800 INFO  ya_persistence::executor] using database at: E:\Junioryear_firstsemester\Introduction_to_Blockchain\backend\yagna_data\payment.db
+[2025-12-23T10:10:14.519+0800 INFO  ya_persistence::executor] using database at: E:\Junioryear_firstsemester\Introduction_to_Blockchain\backend\yagna_data\market.db
+[2025-12-23T10:10:14.529+0800 INFO  ya_persistence::executor] using database at: file:market?mode=memory&cache=shared
+[2025-12-23T10:10:14.542+0800 INFO  yagna] Db GSB service successfully activated
+Running migration 20200103135015
+Running migration 20221219171115
+[2025-12-23T10:10:14.562+0800 INFO  actix_server::server] Actix runtime found; starting in Actix runtime
+[2025-12-23T10:10:14.563+0800 INFO  actix_server::server] starting service: "gsb", workers: 16, listening on: 127.0.0.1:7464
+[2025-12-23T10:10:14.563+0800 INFO  ya_identity::service::identity] generating new default identity
+[2025-12-23T10:10:14.574+0800 INFO  ya_identity::service::identity] using default identity: 0x640ab3dbf711d3f08cade3fc60b1f32330abcc09
+[2025-12-23T10:10:14.585+0800 INFO  ya_service_bus::remote_router] trying to connect to: 127.0.0.1:7464
+[2025-12-23T10:10:14.590+0800 INFO  yagna] Identity GSB service successfully activated
+[2025-12-23T10:10:14.591+0800 INFO  yagna] Metrics GSB service successfully activated
+Running migration 20210122093722
+[2025-12-23T10:10:14.596+0800 INFO  ya_service_bus::connection] started connection to gsb
+[2025-12-23T10:10:14.600+0800 INFO  ya_metrics::pusher] Metrics will be pushed only if appropriate consent is given, push endpoint: https://metrics.golem.network:9092/metrics/job/community.1/instance/0x640ab3dbf711d3f08cade3fc60b1f32330abcc09/hostname/0x640ab3dbf711d3f08cade3fc60b1f32330abcc09
+[2025-12-23T10:10:15.448+0800 INFO  ya_version::github] Stored currently running Yagna release Version 0.2.0 '(31f5353e 2025-12-22)' released 2015-10-13 to DB
+[2025-12-23T10:10:16.153+0800 WARN  ya_version::github] New Yagna Version 0.17.6 'v0.17.6 #1122' released 2025-10-04 is available! Update via `curl -sSf https://join.golem.network/as-provider | bash -` or `curl -sSf https://join.golem.network/as-requestor | bash -`
+[2025-12-23T10:10:16.154+0800 INFO  yagna] Version GSB service successfully activated
+[2025-12-23T10:10:16.159+0800 INFO  ya_net::hybrid::service] Hybrid NET - Using default identity as network id: 0x640ab3dbf711d3f08cade3fc60b1f32330abcc09
+[2025-12-23T10:10:16.160+0800 INFO  ya_net::hybrid::service] Starting network (hybrid) with identity: 0x640ab3dbf711d3f08cade3fc60b1f32330abcc09
+[2025-12-23T10:10:16.162+0800 INFO  ya_net::hybrid::service] Resolving _net_relay._udp SRV record...
+[2025-12-23T10:10:16.248+0800 INFO  ya_net::hybrid::service] SRV record _net_relay._udp resolved to: yacn2.dev.golem.network:7477
+[2025-12-23T10:10:16.248+0800 INFO  ya_net::hybrid::service] Hybrid NET relay server configured on url: udp://yacn2.dev.golem.network:7477
+[2025-12-23T10:10:16.328+0800 INFO  ya_relay_core::udp_stream] Server listening on: 0.0.0.0:11500
+[2025-12-23T10:10:16.335+0800 INFO  ya_relay_client::session::session_initializer] Initializing session with NET relay server at: 52.48.158.112:7477
+[2025-12-23T10:10:16.966+0800 INFO  ya_relay_client::session::session_initializer] Established session a52a6e48884b556fe64e2bd3a9bcdd99 with NET relay server (52.48.158.112:7477)
+[2025-12-23T10:10:16.966+0800 INFO  ya_relay_client::raw_session] Registering endpoints on 52.48.158.112:7477.
+[2025-12-23T10:10:18.364+0800 INFO  ya_relay_client::raw_session] Endpoints registration finished on 52.48.158.112:7477.
+[2025-12-23T10:10:18.372+0800 INFO  ya_service_bus::remote_router] trying to connect to: 127.0.0.1:7464
+[2025-12-23T10:10:18.373+0800 INFO  ya_service_bus::connection] started connection to gsb
+[2025-12-23T10:10:18.374+0800 INFO  yagna] Net GSB service successfully activated
+Running migration 20200515093513
+Running migration 20201004190200
+Running migration 20210628112052
+Running migration 20210701070605
+Running migration 20200515093513
+Running migration 20201004190200
+Running migration 20210628112052
+Running migration 20210701070605
+[2025-12-23T10:10:18.395+0800 INFO  ya_market::protocol::discovery] Discovery protocol version: mk1
+[2025-12-23T10:10:18.401+0800 INFO  ya_market::protocol::negotiation::provider] Negotiation (Provider) protocol version: mk1
+[2025-12-23T10:10:18.402+0800 INFO  ya_market::protocol::negotiation::requestor] Negotiation (Requestor) protocol version: mk1
+[2025-12-23T10:10:18.402+0800 INFO  yagna] Market GSB service successfully activated
+Running migration 20200526161800
+Running migration 20200715084557
+Running migration 20200821121851
+Running migration 20201203092313
+Running migration 20210701070605
+Running migration 20210721201031
+[2025-12-23T10:10:18.414+0800 INFO  yagna] Activity GSB service successfully activated
+Running migration 20200123123456
+Running migration 20201211123456
+Running migration 20210128102818
+Running migration 20210701070605
+Running migration 20220321
+Running migration 20220404095553
+Running migration 20231016123456
+Running migration 20231113123456
+Running migration 20231214123456
+Running migration 20240216
+Running migration 20240306extend
+Running migration 20240308123456
+Running migration 20240802173140
+Running migration 20240812152257
+Running migration 20240812171012
+Running migration 20250416555555
+[2025-12-23T10:10:18.462+0800 INFO  ya_activity::provider::service] Checkup for alive Activities remaining from previous runs
+[2025-12-23T10:10:18.465+0800 INFO  ya_payment::post_migrations] Running post migration job: sum_activities_into_agreement
+[2025-12-23T10:10:18.465+0800 INFO  ya_payment::post_migrations] Post migration job: sum_activities_into_agreement done. Marking as done.
+[2025-12-23T10:10:18.466+0800 INFO  yagna] Payment GSB service successfully activated
+[2025-12-23T10:10:18.466+0800 INFO  yagna] SgxDriver GSB service successfully activated
+[2025-12-23T10:10:18.466+0800 INFO  yagna] GsbApi GSB service successfully activated
+[2025-12-23T10:10:18.475+0800 INFO  erc20_payment_lib::runtime] connecting to sqlite file db: E:\Junioryear_firstsemester\Introduction_to_Blockchain\backend\yagna_data\erc20.sqlite
+[2025-12-23T10:10:18.491+0800 INFO  ya_payment::processor] Releasing expired allocations...
+[2025-12-23T10:10:18.491+0800 INFO  ya_payment::processor] No allocations found to be released.
+[2025-12-23T10:10:18.524+0800 INFO  ya_payment::cycle] Adding owner: 0x640ab3dbf711d3f08cade3fc60b1f32330abcc09
+[2025-12-23T10:10:18.524+0800 INFO  ya_payment::cycle] Adding platform: erc20-goerli-tglm
+[2025-12-23T10:10:18.524+0800 INFO  ya_payment::cycle] Adding platform: erc20-hoodi-tglm
+[2025-12-23T10:10:18.525+0800 INFO  ya_payment::cycle] Adding platform: erc20-sepolia-tglm
+[2025-12-23T10:10:18.525+0800 INFO  ya_payment::cycle] Adding platform: erc20-mainnet-glm
+[2025-12-23T10:10:18.525+0800 INFO  ya_payment::cycle] Adding platform: erc20-amoy-tglm
+[2025-12-23T10:10:18.525+0800 INFO  ya_payment::cycle] Adding platform: erc20-polygon-glm
+[2025-12-23T10:10:18.525+0800 INFO  ya_payment::cycle] Adding platform: erc20-holesky-tglm
+[2025-12-23T10:10:18.525+0800 INFO  ya_payment::cycle] Adding platform: erc20-mumbai-tglm
+[2025-12-23T10:10:18.526+0800 INFO  ya_payment::cycle] Adding platform: erc20-rinkeby-tglm
+[2025-12-23T10:10:18.527+0800 INFO  ya_payment::cycle] Starting batch cycle task for owner_id: 0x640ab3dbf711d3f08cade3fc60b1f32330abcc09, platform: erc20-goerli-tglm
+[2025-12-23T10:10:18.527+0800 INFO  ya_payment::cycle] Starting batch cycle task for owner_id: 0x640ab3dbf711d3f08cade3fc60b1f32330abcc09, platform: erc20-hoodi-tglm
+[2025-12-23T10:10:18.528+0800 INFO  ya_payment::cycle] Starting batch cycle task for owner_id: 0x640ab3dbf711d3f08cade3fc60b1f32330abcc09, platform: erc20-sepolia-tglm
+[2025-12-23T10:10:18.528+0800 INFO  ya_payment::cycle] Starting batch cycle task for owner_id: 0x640ab3dbf711d3f08cade3fc60b1f32330abcc09, platform: erc20-mainnet-glm
+[2025-12-23T10:10:18.528+0800 INFO  ya_payment::cycle] Starting batch cycle task for owner_id: 0x640ab3dbf711d3f08cade3fc60b1f32330abcc09, platform: erc20-amoy-tglm
+[2025-12-23T10:10:18.528+0800 INFO  ya_payment::cycle] Starting batch cycle task for owner_id: 0x640ab3dbf711d3f08cade3fc60b1f32330abcc09, platform: erc20-polygon-glm
+[2025-12-23T10:10:18.529+0800 INFO  ya_payment::cycle] Starting batch cycle task for owner_id: 0x640ab3dbf711d3f08cade3fc60b1f32330abcc09, platform: erc20-holesky-tglm
+[2025-12-23T10:10:18.529+0800 INFO  ya_payment::cycle] Starting batch cycle task for owner_id: 0x640ab3dbf711d3f08cade3fc60b1f32330abcc09, platform: erc20-mumbai-tglm
+[2025-12-23T10:10:18.529+0800 INFO  ya_payment::cycle] Starting batch cycle task for owner_id: 0x640ab3dbf711d3f08cade3fc60b1f32330abcc09, platform: erc20-rinkeby-tglm
+[2025-12-23T10:10:18.530+0800 INFO  ya_erc20_driver::service] Successfully connected Erc20Service to gsb.
+[2025-12-23T10:10:18.535+0800 INFO  actix_server::builder] starting 16 workers
+[2025-12-23T10:10:18.569+0800 INFO  yagna::extension] No extensions selected for autostart
+[2025-12-23T10:10:18.570+0800 INFO  actix_server::server] Actix runtime found; starting in Actix runtime
+[2025-12-23T10:10:18.570+0800 INFO  actix_server::server] starting service: "actix-web-service-127.0.0.1:7465", workers: 16, listening on: 127.0.0.1:7465
+[2025-12-23T10:10:18.755+0800 INFO  yagna] All 16 http workers started - listening on 127.0.0.1:7465
+[2025-12-23T10:10:19.383+0800 INFO  ya_relay_client::session::session_initializer] Initializing p2p session with Node: [0x982a8599a914eac2eec037f07f7a6330b8126560], address: 217.198.143.208:11500
+[2025-12-23T10:10:19.383+0800 INFO  ya_relay_client::session::session_initializer] Initializing p2p session with Node: [0x4ddcadc8917653eb6b89a2accceb9e915297f981], address: 93.159.149.234:11500
+[2025-12-23T10:10:19.383+0800 INFO  ya_relay_client::session::session_initializer] Initializing p2p session with Node: [0xfd26614daf0615e168dae30e3b7f23c30ee970c9], address: 168.231.111.32:11500
+[2025-12-23T10:10:19.384+0800 INFO  ya_relay_client::session::session_initializer] Initializing p2p session with Node: [0x99b4bcda0cfd52b9e66927890534f3286c034a03], address: 92.113.124.156:11500
+[2025-12-23T10:10:19.384+0800 INFO  ya_relay_client::session::session_initializer] Initializing p2p session with Node: [0x333333333321fd5543157f70301bde34f59dfce8], address: 46.4.3.132:22003
+[2025-12-23T10:10:19.611+0800 INFO  ya_metrics::service] Pushing all metrics, because stats consent is given
+[2025-12-23T10:10:19.657+0800 INFO  ya_relay_client::session::session_initializer] Established P2P session b5ab7015c39e6d66160f7c0333f05eed with node [0x99b4bcda0cfd52b9e66927890534f3286c034a03] (92.113.124.156:11500)
+[2025-12-23T10:10:19.942+0800 INFO  ya_relay_client::session::session_initializer] Established P2P session e71108a7335face6f19f0ce29f35e49b with node [0x982a8599a914eac2eec037f07f7a6330b8126560] (217.198.143.208:11500)
+[2025-12-23T10:10:19.969+0800 INFO  ya_relay_client::session::session_initializer] Established P2P session 20b6ec985d0724683866666a0bd025cd with node [0x333333333321fd5543157f70301bde34f59dfce8] (46.4.3.132:22003)
+[2025-12-23T10:10:20.054+0800 INFO  ya_relay_client::session::session_initializer] Established P2P session c51214d30cb95c25bcf6541b379b1cc3 with node [0x4ddcadc8917653eb6b89a2accceb9e915297f981] (93.159.149.234:11500)
+[2025-12-23T10:10:22.402+0800 WARN  ya_relay_client::session] Failed to establish direct p2p session with [0xfd26614daf0615e168dae30e3b7f23c30ee970c9]. All attempts to establish direct session with node [0xfd26614daf0615e168dae30e3b7f23c30ee970c9] failed
+[2025-12-23T10:10:22.403+0800 WARN  ya_relay_client::session] Failed to establish reverse direct p2p session with [0xfd26614daf0615e168dae30e3b7f23c30ee970c9]. We don't have public endpoints.
+[2025-12-23T10:10:22.404+0800 INFO  ya_relay_client::session] Attempting to use relay Server to forward packets to [0xfd26614daf0615e168dae30e3b7f23c30ee970c9]
+[2025-12-23T10:10:22.405+0800 INFO  ya_relay_client::session] Using relay server [0x0000000000000000000000000000000000000000] (52.48.158.112:7477) to forward packets to [0xfd26614daf0615e168dae30e3b7f23c30ee970c9] (slot 881173)
+[2025-12-23T10:11:19.614+0800 INFO  ya_metrics::service] Pushing all metrics, because stats consent is given
+[2025-12-23T10:12:19.606+0800 INFO  ya_metrics::service] Pushing all metrics, because stats consent is given
+[2025-12-23T10:13:19.603+0800 INFO  ya_metrics::service] Pushing all metrics, because stats consent is given
+[2025-12-23T10:14:19.615+0800 INFO  ya_metrics::service] Pushing all metrics, because stats consent is given
+[2025-12-23T10:15:19.605+0800 INFO  ya_metrics::service] Pushing all metrics, because stats consent is given
+[2025-12-23T10:16:19.614+0800 INFO  ya_metrics::service] Pushing all metrics, because stats consent is given
+[2025-12-23T10:17:19.611+0800 INFO  ya_metrics::service] Pushing all metrics, because stats consent is given
+[2025-12-23T10:18:19.613+0800 INFO  ya_metrics::service] Pushing all metrics, because stats consent is given
+[2025-12-23T10:19:19.600+0800 INFO  ya_metrics::service] Pushing all metrics, because stats consent is given
+[2025-12-23T10:20:19.608+0800 INFO  ya_metrics::service] Pushing all metrics, because stats consent is given
+[2025-12-23T10:21:19.610+0800 INFO  ya_metrics::service] Pushing all metrics, because stats consent is given
+[2025-12-23T10:22:19.609+0800 INFO  ya_metrics::service] Pushing all metrics, because stats consent is given
+[2025-12-23T10:23:19.613+0800 INFO  ya_metrics::service] Pushing all metrics, because stats consent is given
+[2025-12-23T10:24:16.647+0800 INFO  ya_relay_client::session] Closing session 20b6ec985d0724683866666a0bd025cd with [0x333333333321fd5543157f70301bde34f59dfce8] (46.4.3.132:22003)
+[2025-12-23T10:24:16.648+0800 INFO  ya_relay_client::session] Session 20b6ec985d0724683866666a0bd025cd with [0x333333333321fd5543157f70301bde34f59dfce8] (46.4.3.132:22003) closed
+[2025-12-23T10:24:18.967+0800 INFO  ya_relay_client::session::session_initializer] Initializing p2p session with Node: [0x333333333321fd5543157f70301bde34f59dfce8], address: 46.4.3.132:22003
+[2025-12-23T10:24:19.511+0800 INFO  ya_relay_client::session::session_initializer] Established P2P session 85f77822d7ad2b92ff68e93f4d6c76d2 with node [0x333333333321fd5543157f70301bde34f59dfce8] (46.4.3.132:22003)
+[2025-12-23T10:24:19.610+0800 INFO  ya_metrics::service] Pushing all metrics, because stats consent is given
+[2025-12-23T10:24:49.294+0800 WARN  ya_relay_core::udp_stream] UDP socket error: 远程主机强迫关闭了一个现有的连接。 (os error 10054)
+[2025-12-23T10:24:49.349+0800 WARN  ya_relay_core::udp_stream] UDP socket error: 远程主机强迫关闭了一个现有的连接。 (os error 10054)
+[2025-12-23T10:24:49.405+0800 WARN  ya_relay_core::udp_stream] UDP socket error: 远程主机强迫关闭了一个现有的连接。 (os error 10054)
+[2025-12-23T10:24:49.454+0800 WARN  ya_relay_core::udp_stream] UDP socket error: 远程主机强迫关闭了一个现有的连接。 (os error 10054)
+[2025-12-23T10:24:55.267+0800 WARN  ya_relay_core::udp_stream] UDP socket error: 远程主机强迫关闭了一个现有的连接。 (os error 10054)
+[2025-12-23T10:25:00.090+0800 INFO  ya_relay_client::session] Closing session 85f77822d7ad2b92ff68e93f4d6c76d2 with [0x333333333321fd5543157f70301bde34f59dfce8] (46.4.3.132:22003)
+[2025-12-23T10:25:00.096+0800 INFO  ya_relay_client::session] Session 85f77822d7ad2b92ff68e93f4d6c76d2 with [0x333333333321fd5543157f70301bde34f59dfce8] (46.4.3.132:22003) closed
+[2025-12-23T10:25:00.391+0800 INFO  ya_relay_client::session::session_initializer] Initializing p2p session with Node: [0x333333333321fd5543157f70301bde34f59dfce8], address: 46.4.3.132:22003
+[2025-12-23T10:25:00.905+0800 INFO  ya_relay_client::session::session_initializer] Established P2P session 5f69655806e95544e294032f1533bb03 with node [0x333333333321fd5543157f70301bde34f59dfce8] (46.4.3.132:22003)
+[2025-12-23T10:25:19.601+0800 INFO  ya_metrics::service] Pushing all metrics, because stats consent is given

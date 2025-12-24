@@ -1,0 +1,34 @@
+yagna 0.17.6 (31f5353e 2025-12-22)
+Golem network server.
+
+By running this software you declare that you have read, understood and hereby accept the disclaimer and privacy warning
+found at https://docs.golem.network/docs/golem/terms
+
+Use RUST_LOG env variable to change log level.
+
+USAGE:
+    yagna.exe [FLAGS] [OPTIONS] <SUBCOMMAND>
+
+FLAGS:
+        --json       Return results in JSON format
+    -h, --help       Prints help information
+    -V, --version    Prints version information
+
+OPTIONS:
+    -d, --datadir <data-dir>    Service data dir [env: YAGNA_DATADIR]  [default:
+                                C:\Users\admin\AppData\Roaming\GolemFactory\yagna\data]
+    -g, --gsb-url <gsb-url>     Service Bus (aka GSB) URL [env: GSB_URL]  [default: tcp://127.0.0.1:7464]
+
+SUBCOMMANDS:
+    db           Database management
+    id           Identity management
+    app-key      Application keys management
+    version      Yagna version management
+    net          Network management
+    market       Market management
+    activity     Activity management
+    payment      Payment management
+    consent      Consent management
+    service      Core service usage
+    extension    Extension management
+    help         Prints this message or the help of the given subcommand(s)
