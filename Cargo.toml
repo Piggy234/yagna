@@ -31,14 +31,21 @@ packet-trace-enable = [
   "ya-service-bus/packet-trace-enable",
 ]
 
+# enable test exports for integration tests
+test-exports = []
+
 [[bin]]
 name = "yagna"
 path = "core/serv/src/main.rs"
+
+[lib]
+path = "core/serv/src/lib.rs"
 
 [dependencies]
 ya-compile-time-utils.workspace = true
 ya-activity.workspace = true
 ya-core-model.workspace = true
+ya_staking = { path = "core/staking" }
 ya-dummy-driver = { workspace = true, optional = true }
 ya-file-logging.workspace = true
 ya-gsb-api.workspace = true
@@ -79,6 +86,9 @@ actix-web.workspace = true
 
 anyhow = "1.0"
 chrono = "0.4"
+rusqlite = { version = "0.29", features = ["bundled", "chrono"] }
+r2d2 = "0.8"
+r2d2_sqlite = "0.22"
 directories = "2.0.2"
 dotenv = "0.15.0"
 futures = "0.3"
@@ -249,6 +259,7 @@ members = [
   "test-utils/test-framework/framework-basic",
   "test-utils/test-framework/framework-mocks",
   "core/healthcheck",
+  "core/staking",
 ]
 
 [workspace.dependencies]
