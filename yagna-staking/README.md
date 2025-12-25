@@ -1,57 +1,48 @@
-# Sample Hardhat 3 Beta Project (`mocha` and `ethers`)
+# 智能合约说明文档
 
-This project showcases a Hardhat 3 Beta project using `mocha` for tests and the `ethers` library for Ethereum interactions.
+## 1. 核心合约功能
 
-To learn more about the Hardhat 3 Beta, please visit the [Getting Started guide](https://hardhat.org/docs/getting-started#getting-started-with-hardhat-3). To share your feedback, join our [Hardhat 3 Beta](https://hardhat.org/hardhat3-beta-telegram-group) Telegram group or [open an issue](https://github.com/NomicFoundation/hardhat/issues/new) in our GitHub issue tracker.
+合约 `StakingManager.sol` 实现了以下四个核心业务流程：
 
-## Project Overview
+| 函数名称 | 调用者 | 描述 |
+| :--- | :--- | :--- |
+| **`deposit()`** | 房东 (前端) | 质押 MATIC 激活算力节点，最小质押额为 **0.01 MATIC**。 |
+| **`withdraw()`** | 房东 (前端) | 提取所有质押本金和任务收益。提取后 `isRegistered` 状态失效。 |
+| **`slash()`** | 管理员 (后端) | **阶梯惩罚机制**：当检测到节点掉线时，根据 `slashCount` 自动增加惩罚比例，惩罚金转入 Admin 账户。 |
+| **`addReward()`** | 管理员 (后端) | 任务结算时，由后端调度器将任务报酬发放至合约中该房东的奖励余额中。 |
+| **`getStatus()`** | 所有人 | 查询指定地址的质押金额、待领奖励及累计被惩罚次数。 |
 
-This example project includes:
+---
 
-- A simple Hardhat configuration file.
-- Foundry-compatible Solidity unit tests.
-- TypeScript integration tests using `mocha` and ethers.js
-- Examples demonstrating how to connect to different types of networks, including locally simulating OP mainnet.
+## 2. 合约部署指南
 
-## Usage
-
-### Running Tests
-
-To run all the tests in the project, execute the following command:
-
-```shell
-npx hardhat test
+### 环境准备
+1. **安装依赖**：`npm install`。
+2. **安全配置**：在根目录创建 `.env` 文件：
+```bash
+AMOY_PRIVATE_KEY=你的私钥
 ```
 
-You can also selectively run the Solidity or `mocha` tests:
+### 部署步骤
+在终端执行以下命令：
 
-```shell
-npx hardhat test solidity
-npx hardhat test mocha
+```bash
+# 1. 编译合约 (生成最新的 ABI 和字节码)
+npx hardhat compile
+
+# 2. 部署到 Amoy 测试网
+npx hardhat run scripts/deploy.ts --network amoy
 ```
 
-### Make a deployment to Sepolia
+---
 
-This project includes an example Ignition module to deploy the contract. You can deploy this module to a locally simulated chain or to Sepolia.
+### 3. 前端交接说明
+更新前端的配置：
 
-To run the deployment to a local chain:
+修改前端调用服务中的合约地址，改为上方部署后的控制台输出地址:
 
-```shell
-npx hardhat ignition deploy ignition/modules/Counter.ts
-```
+`src/util/staking.ts`
 
-To run the deployment to Sepolia, you need an account with funds to send the transaction. The provided Hardhat configuration includes a Configuration Variable called `SEPOLIA_PRIVATE_KEY`, which you can use to set the private key of the account you want to use.
-
-You can set the `SEPOLIA_PRIVATE_KEY` variable using the `hardhat-keystore` plugin or by setting it as an environment variable.
-
-To set the `SEPOLIA_PRIVATE_KEY` config variable using `hardhat-keystore`:
-
-```shell
-npx hardhat keystore set SEPOLIA_PRIVATE_KEY
-```
-
-After setting the variable, you can run the deployment with the Sepolia network:
-
-```shell
-npx hardhat ignition deploy --network sepolia ignition/modules/Counter.ts
+```typescript
+const CONTRACT_ADDRESS = "0x合约地址";
 ```
